@@ -150,7 +150,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="http://lazybonejc.github.io/blog/2021/12/29/Hexo%E5%BF%85%E5%82%99%E6%8C%87%E4%BB%A4%E6%95%99%E5%AD%B8/">
+    <link itemprop="mainEntityOfPage" href="http://lazybonejc.github.io/blog/2021/12/29/HexoBlog%E5%AF%AB%E4%BD%9C%E6%8C%87%E4%BB%A4%E6%95%99%E5%AD%B8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar2.JPG">
@@ -164,7 +164,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/2021/12/29/Hexo%E5%BF%85%E5%82%99%E6%8C%87%E4%BB%A4%E6%95%99%E5%AD%B8/" class="post-title-link" itemprop="url">Hexo Blog - 寫作指令簡易教學</a>
+            <a href="/blog/2021/12/29/HexoBlog%E5%AF%AB%E4%BD%9C%E6%8C%87%E4%BB%A4%E6%95%99%E5%AD%B8/" class="post-title-link" itemprop="url">Hexo Blog - 寫作指令教學</a>
         </h2>
 
         <div class="post-meta">
@@ -175,7 +175,16 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-12-29 13:27:16 / Modified: 13:59:01" itemprop="dateCreated datePublished" datetime="2021-12-29T13:27:16+08:00">2021-12-29</time>
+              <time title="Created: 2021-12-29 13:27:16 / Modified: 19:56:04" itemprop="dateCreated datePublished" datetime="2021-12-29T13:27:16+08:00">2021-12-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/WebDesign/" itemprop="url" rel="index"><span itemprop="name">WebDesign</span></a>
+                </span>
             </span>
 
           <br>
@@ -184,14 +193,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>613</span>
+              <span>1.3k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>2 mins.</span>
             </span>
 
         </div>
@@ -203,31 +212,70 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><strong>使用路徑：</strong>進入 cmd 後，進到 hexo 資料夾中，再進到存放 blog 的資料夾。</p>
+          <h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>為何選用 Hxeo 來當作 Blog 框架?</p>
 <ol>
-<li><strong>Hexo 替我們生成一個叫 “Post title” 的 Markdown 文件(post title 即為文章標題)</strong></li>
+<li>因為建立於本地端，所以可以更方便離線進行編輯</li>
+<li>使用 <code>Markdown</code> 語法撰寫 Blog，更方便、通用、容易上手</li>
+<li>搭配線上<code>CICD</code>工具部署於 <code>Github</code> 上，完全零成本</li>
+<li>中文文件資源多</li>
+<li>支援多樣不同樣板，可隨心所欲切換風格</li>
+<li>開源社群活躍</li>
+<li><strong>基於 NodeJs 擁有豐富的插件</strong></li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;post title&quot;</span><br></pre></td></tr></table></figure>
-
+<h2 id="建立自己的-Hexo："><a href="#建立自己的-Hexo：" class="headerlink" title="建立自己的 Hexo："></a>建立自己的 Hexo：</h2><h3 id="安裝-Node-js"><a href="#安裝-Node-js" class="headerlink" title="安裝 Node.js"></a>安裝 Node.js</h3><p>首先要安裝 <a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js</a></p>
+<p>再來進入<code>cmd</code></p>
+<blockquote>
+<p>node -v</p>
+</blockquote>
+<p>確認是否安裝成功</p>
+<h3 id="安裝-Hexo-cli"><a href="#安裝-Hexo-cli" class="headerlink" title="安裝 Hexo-cli"></a>安裝 Hexo-cli</h3><p>一樣進入<code>cmd</code>，使用下列指令安裝 Hexo</p>
+<blockquote>
+<p>npm install hexo-cli -g</p>
+</blockquote>
+<p>接著使用<code>cmd</code>的<code>cd</code>指令進入 Hexo 資料夾的目錄中</p>
+<p>使用<code>hexo cli</code>幫助我們快速建立 Blog 的環境</p>
+<blockquote>
+<p>hexo init blog #建立一個 blog 資料夾, hexo 會複製對應的文件到此資料夾中</p>
+<p>npm install #安裝相關套件</p>
+</blockquote>
+<p>若要把 Hexo deploy 到 Github 上面，需要先安裝</p>
+<blockquote>
+<p>npm install hexo-deployer-git –save</p>
+</blockquote>
+<h3 id="Hexo-config-yml-設定說明"><a href="#Hexo-config-yml-設定說明" class="headerlink" title="Hexo config.yml 設定說明"></a>Hexo config.yml 設定說明</h3><p>安裝完後再進入 Hexo 資料夾下的<code>_config.yml</code>檔案中<br>並將 type, repo, branch 設定如下</p>
+<blockquote>
+<p>deploy:<br>type: git<br>repo: <a href="mailto:&#x67;&#x69;&#116;&#x40;&#x67;&#105;&#116;&#x68;&#117;&#98;&#x2e;&#x63;&#x6f;&#109;">&#x67;&#x69;&#116;&#x40;&#x67;&#105;&#116;&#x68;&#117;&#98;&#x2e;&#x63;&#x6f;&#109;</a>:userName/blog.git<br>branch: gh-pages</p>
+</blockquote>
+<h2 id="寫作指令："><a href="#寫作指令：" class="headerlink" title="寫作指令："></a>寫作指令：</h2><p><strong>Hexo 替我們生成一個叫 “Post title” 的 Markdown 文件(post title 即為文章標題)</strong></p>
+<blockquote>
+<p>hexo new “post title”</p>
+</blockquote>
 <p>輸入完指令後，進到 Hexo 資料夾中的 source 資料夾中，便會看到一個 post-title.md 的 markdown 文件，即可進行編輯。</p>
 <p><strong>若要生成草稿文件(draft):</strong><br>(草稿頁面不會被 Hexo 渲染生成，但可以預覽其效果，也就是最後的靜態網站不會存在草稿文章。)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new draft &quot;Draft title&quot;</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p>hexo new draft “Draft title”</p>
+</blockquote>
 <p><strong>若要生成純頁面(page):</strong><br>(Hexo 文件夾中的 scaffolds 預設有三種形式的模板：草稿 draft、純頁面 page、文章 post)<br>(使用者也可以加入自訂的頁面格式，將指令後的 page, draft, post 改為自訂的模板名稱即可)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &quot;Page title&quot;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li><strong>輸入 Hexo 生成網頁的指令 (generate)</strong></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><strong>輸入生成 Hexo 伺服器的指令 (server)</strong></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-
-<p><strong>此文作者：</strong>Walter Chang<br /><strong>此文地址：</strong> <a href="http://lazybonejc.github.io/blog/2021/12/29/Hexo%E5%BF%85%E5%82%99%E6%8C%87%E4%BB%A4%E6%95%99%E5%AD%B8/">http://lazybonejc.github.io/blog/2021/12/29/Hexo必備指令教學/</a> <br /><strong>版權聲明：</strong>本網誌所有文章除特別聲明外，均採用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/3.0/tw/">CC BY-NC-SA 3.0 TW</a> 許可協議。轉載請註明出處！</p>
+<blockquote>
+<p>hexo new page “Page title”</p>
+</blockquote>
+<p><strong>清除快取檔案 (db.json) 和已產生的靜態檔案 (public)</strong></p>
+<blockquote>
+<p>hexo clean</p>
+</blockquote>
+<p><strong>輸入 Hexo 生成網頁的指令 (generate)</strong></p>
+<blockquote>
+<p>hexo g</p>
+</blockquote>
+<p><strong>輸入生成 Hexo 伺服器的指令 (server)</strong></p>
+<blockquote>
+<p>hexo s #會產生 Localhost 來提供使用者查看</p>
+</blockquote>
+<p><strong>若確定 blog 沒問題，則使用以下指令將更新過後的 blog deploy 至 GitHub 上</strong></p>
+<blockquote>
+<p>hexo d</p>
+</blockquote>
+<p><strong>此文作者：</strong>Walter Chang<br /><strong>此文地址：</strong> <a href="http://lazybonejc.github.io/blog/2021/12/29/HexoBlog%E5%AF%AB%E4%BD%9C%E6%8C%87%E4%BB%A4%E6%95%99%E5%AD%B8/">http://lazybonejc.github.io/blog/2021/12/29/HexoBlog寫作指令教學/</a> <br /><strong>版權聲明：</strong>本網誌所有文章除特別聲明外，均採用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/3.0/tw/">CC BY-NC-SA 3.0 TW</a> 許可協議。轉載請註明出處！</p>
 
       
     </div>
@@ -400,6 +448,14 @@
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
   </nav>
 </div>
   <div class="links-of-author motion-element">
@@ -444,12 +500,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">1k</span>
+    <span title="Symbols count total">2k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2 mins.</span>
+    <span title="Reading time total">3 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
